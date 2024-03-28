@@ -32,6 +32,8 @@ module.exports = router;
  *   post:
  *     summary: Create task
  *     tags: [Task]
+ *     security:
+ *        - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -45,7 +47,7 @@ module.exports = router;
  *      tags: [Task]
  *      summary: Get all tasks
  *      security:
- *        - BearerAuth: []
+ *        - bearerAuth: []
  *      responses:
  *        "200":
  *           description: OK
@@ -53,6 +55,8 @@ module.exports = router;
  *    get:
  *      tags: [Task]
  *      summary: Get a task by ID
+ *      security:
+ *        - bearerAuth: []
  *      parameters:
  *        - name: taskId
  *          in: path
@@ -66,24 +70,35 @@ module.exports = router;
  *      tags: [Task]
  *      summary: Update a task by ID
  *      security:
- *        - BearerAuth: []
+ *        - bearerAuth: []
  *      parameters:
  *        - name: taskId
  *          in: path
  *          description: ID of the task to update
  *          required: true
  *          type: string
- *        - name: task
- *          in: body
- *          description: Task object
+ *      requestBody:
  *          required: true
- *          schema:
- *            $ref: '#/definitions/TaskInput'
+ *          content:
+ *             application/json:
+ *                schema:
+ *                   $ref: '#/definitions/TaskInput'
+ *      responses:
+ *        "200":
+ *          description: OK
+ *        "404":
+ *           description: Task not found
+ *        "400":
+ *           description: Invalid request payload
+ *        "401":
+ *           description: Unauthorized - Invalid or missing authentication token
+ *        "500":
+ *           description: Internal server error
  *    delete:
  *      tags: [Task]
  *      summary: Delete a task by ID
  *      security:
- *         - BearerAuth: []
+ *         - bearerAuth: []
  *      parameters:
  *        - name: taskId
  *          in: path

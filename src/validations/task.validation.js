@@ -4,7 +4,6 @@ const TaskStatus = require('../utils/taskStatus');
 
 const createTask = {
   body: Joi.object().keys({
-    userId: Joi.string().custom(objectId),
     title: Joi.string().required(),
     description: Joi.string().optional(),
     status: Joi.string()
@@ -39,7 +38,6 @@ const updateTask = {
   }),
   body: Joi.object()
     .keys({
-      userId: Joi.string().custom(objectId).optional(),
       title: Joi.string().optional(),
       description: Joi.string().optional(),
       status: Joi.string().optional(),

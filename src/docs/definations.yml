@@ -2,10 +2,20 @@ definitions:
   TaskInput:
     type: object
     properties:
-      name:
+      title:
         type: string
+        minLength: 3
+        maxLength: 255
+        description: The title of the task.
       description:
         type: string
+        description: The description of the task.
+      status:
+        type: string
+        enum: [PENDING, IN_PROGRESS, COMPLETED]
+        default: PENDING
+        description: The status of the task. Must be one of PENDING, IN_PROGRESS, COMPLETED.
       dueDate:
         type: string
         format: date
+        description: The due date of the task in ISO 8601 format (YYYY-MM-DD).

@@ -17,7 +17,7 @@ const defaultRoutes = [
     route: docsRoute,
   },
   {
-    path: '/task',
+    path: '/tasks',
     route: taskRoute,
   },
 ];

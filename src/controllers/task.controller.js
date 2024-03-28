@@ -5,7 +5,8 @@ const catchAsync = require('../utils/catchAsync');
 const { taskService } = require('../services');
 
 const createTask = catchAsync(async (req, res) => {
-  const task = await taskService.createTask(req.body);
+  const body = { userId: req.user._id, ...req.body };
+  const task = await taskService.createTask(body);
   res.status(httpStatus.CREATED).send(task);
 });
 
