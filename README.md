@@ -61,6 +61,12 @@ yarn install
 
 ## Commands
 
+To test rate limit:
+```bash
+chmod +x ./tests/rate-limiter.sh
+./tests/rate-limiter.sh
+```
+
 Testing:
 
 ```bash
