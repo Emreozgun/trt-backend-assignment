@@ -29,6 +29,10 @@
     - findAll
     - findOne
 
+## Swagger Documentation
+- You can find the swagger documentation in the following link:
+  - [Swagger Documentation](http://localhost:3000/v1/docs)
+
 ## Usage
 
 Clone the repo with ssh:
