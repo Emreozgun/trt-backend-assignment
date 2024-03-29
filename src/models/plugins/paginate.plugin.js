@@ -2,7 +2,7 @@
 
 const paginate = (schema) => {
   /**
-   * @typedef {Object} QueryResult
+   * @typedef {Object} x
    * @property {Document[]} results - Results found
    * @property {number} page - Current page
    * @property {number} limit - Maximum number of results per page

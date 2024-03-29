@@ -11,7 +11,7 @@ const createTask = catchAsync(async (req, res) => {
 });
 
 const getTasks = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ['status', 'dueDate', 'createdAt']);
+  const filter = pick(req.query, ['title', 'status']);
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
   const result = await taskService.queryTasks(filter, options);
   res.send(result);

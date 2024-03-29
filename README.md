@@ -1,8 +1,9 @@
 # Task Management System
 
 ## BEFORE STARTING SOME NOTES
-- Normally, the definitions shouldn't give in **.env.example**, but since it is a case study,
+- Normally, the definitions shouldn't give in **.env.example**, but you know it is a case study,
   I have given all the environment in **.env.example**.
+- I only added one model and one service test. I added model test for User and service test for Task. I didn't add more tests.
 
 ## Table of Contents
 

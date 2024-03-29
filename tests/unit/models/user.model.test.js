@@ -1,5 +1,8 @@
 const faker = require('faker');
 const { User } = require('../../../src/models');
+const setupTestDB = require('../../utils/setupTestDB');
+
+setupTestDB();
 
 describe('User model', () => {
   describe('User validation', () => {

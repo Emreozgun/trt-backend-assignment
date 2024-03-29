@@ -18,7 +18,7 @@ const getTasks = {
     status: Joi.string()
       .valid(...Object.values(TaskStatus))
       .optional(),
-    dueDate: Joi.date().optional(),
+    title: Joi.string().optional(),
     createdAt: Joi.date().optional(),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),
